@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="user-scalable=yes, width=device-width, maximum-scale=1.0" />
+<title>サッカー作戦ボード</title>
+<script type="text/javascript" src="prepcanvas.js"></script>
+<!-- <script type="text/javascript" src="drawpitch_full.js"></script> -->
+<script type="text/javascript" src="drawpitch_half.js"></script>
+<script type="text/javascript" src="marker.js"></script>
+<script type="text/javascript" src="json.js"></script>
+
+<style type="text/css">
+body {
+margin: 0px;
+padding: 0px
+}
+#mycanvas {
+border: 1px solid #9c9898;
+}
+</style>
+
+</head>
+
+<body >
+<!-- <h1>サッカー作戦ボード</h1> -->
+<canvas id="mycanvas" width="700" height="560">
+    canvasを表示できません
+</canvas><br>
+
+マーカー<br>
+<input type="text" onKeyUp="SetPlayerName()" id="playername" maxlength="10" placeholder="名前" >
+<select id="SelectColor" onchange="ChangeMarkerColor()"></select>
+<button onclick="DeleteSelected()">Delete</button>
+<button onclick="DeleteAllMarker()">AllClear</button> <br>
+
+ブラウザ保存<br>
+<input type="text" id="jsonRecordName" maxlength="30" value="レコード名" onKeyUp="PasetFromidjsonRecordName()"> 
+<button onclick="SaveJsonLocal()">
+Save</button>
+<br>
+<select id="LocalStorageList" onchange="PasteJsonNameFromSelect()"></select>
+<button onclick="LoadJsonLocal()">
+Load</button>
+<button onclick="DeleteJsonLocal()">
+Delete</button>
+
+<br>
+
+ローカルファイル<br>
+<input type="file" id="myfile" onchange="LoadJsonFile()"> <br>
+
+<input type="text" id="jsonFileName" maxlength="30" value="データファイル" > .js
+<a id="savejsonfile" onmouseover="SaveJsonFile()" href="#">
+<button>Download</button></a>　<br>
+
+
+<input type="text" id="canvasImageName" maxlength="30" value="画像ファイル名" > .png
+<a id="savecanvas" onmouseover="SaveCanvas()" href="#">
+<button>Download</button></a>
+
+<br>
+
+<!--  <div id="jsontest"></div> -->
+
+</body>
+</html>
