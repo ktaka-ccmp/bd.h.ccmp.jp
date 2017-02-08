@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Canvasテスト</title>
+<script>
+
+  function draw(){
+ 
+  var now = new Date();
+  var sec = now.getSeconds();
+  var msec = now.getMilliseconds();
+
+  var canvas = document.getElementById("canvas1");
+  if(canvas.getContext){
+  var cvs = canvas.getContext("2d");
+
+  cvs.clearRect(0,0,canvas.width,canvas.height);
+  cvs.save();
+
+  cvs.beginPath();
+  cvs.arc(msec*0.8,400,10,0,Math.PI*2,true);
+  cvs.closePath();
+  cvs.stroke();
+  cvs.fillStyle="#6600ff";
+  cvs.fill();
+
+  cvs.restore();
+//  setTimeout("draw();",200);
+  setInterval("draw();",10);
+//  setInterval("draw();",1);
+  }
+  }
+
+</script>
+</head>
+
+<body onload="draw();">
+  <canvas id="canvas1" width="800" height="800">
+    canvasを表示できません
+  </canvas>
+</body>
+</html>

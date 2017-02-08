@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Canvasテスト</title>
+<script>
+  function draw(){
+  var canvas = document.getElementById("canvas1");
+  if(canvas.getContext){
+  var cvs = canvas.getContext("2d");
+
+  cvs.lineWidth=4;
+  cvs.lineCap="round";
+  cvs.lineJoin="round";
+
+  cvs.strokeStyle="#ff1100";
+  cvs.strokeRect(100, 100, 300, 300);
+  cvs.fillStyle="#1111ff";
+  cvs.fillRect(110, 110, 280, 280);
+  cvs.clearRect(120, 120, 260, 260);
+  cvs.strokeStyle="#ff11dd";
+  cvs.font="15pt sans-serif";
+  cvs.strokeText("Helloジャパン", 150, 150);
+  cvs.fillText("こんにちはAmerica", 150, 200);
+
+
+  cvs.shadowOffsetX=5;
+  cvs.shadowOffsetY=5;
+  cvs.shadowColor="#aaaaaa";
+  cvs.shadowBlur=10;
+
+  cvs.beginPath();
+  cvs.moveTo(100,420);
+  cvs.lineTo(400,420);
+  cvs.lineTo(200,600);
+  cvs.closePath();
+  cvs.fillStyle="#11ddff";
+  cvs.fill();
+  cvs.stroke();
+
+  cvs.beginPath();
+  cvs.moveTo(0,0);
+  cvs.quadraticCurveTo(50, 100, 100, 0);
+  cvs.stroke();
+
+  cvs.beginPath();
+  cvs.moveTo(200,0);
+  cvs.bezierCurveTo(300,50,100,50,200,100);
+  cvs.stroke();
+
+  cvs.beginPath();
+  cvs.lineWidth=10;
+  cvs.strokeStyle="#0000ff";
+  cvs.arc(600,250,100,0,Math.PI*2,false);
+  cvs.stroke();
+//  cvs.fillStyle="#11ddff";
+//  cvs.fill();
+
+  cvs.beginPath();
+  cvs.moveTo(250,700);
+  cvs.arc(250,700,150,0,Math.PI*3/2,true);
+ // cvs.lineTo(250,700);
+  cvs.stroke();
+ // cvs.closePath();
+  cvs.fillStyle="#11dd99";
+  cvs.fill();
+
+  }
+  }
+</script>
+</head>
+<body onload="draw();">
+  <canvas id="canvas1" width="800" height="800">
+    canvasを表示できません
+  </canvas>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>fileテスト</title>
+<script>
+
+function SaveJsonFile(){
+    var link = document.getElementById("savejsonfile");
+    href = "data:application/js,"+encodeURIComponent("Hello World");
+    document.getElementById("result").innerHTML = href;
+    link.setAttribute("href", href);
+}
+
+
+</script>
+</head>
+
+<body>
+
+<a id="savejsonfile" onmouseover="SaveJsonFile()" href="#" download="hello">
+SaveJason</a>
+
+<div id="result"></div>
+
+</body>
+</html>

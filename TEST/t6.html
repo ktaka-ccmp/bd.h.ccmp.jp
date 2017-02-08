@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>fileテスト</title>
+<script>
+
+  function ShowFile(){
+
+  var fp = document.getElementById("myfile").files[0];
+
+  var reader = new FileReader();
+  reader.readAsText(fp,"utf-8");
+
+  reader.onload = function(){
+  document.getElementById("result").innerHTML = reader.result;
+  }
+
+}
+
+</script>
+</head>
+
+<body>
+
+  <input type="file" id="myfile" onchange="ShowFile()"> 
+
+<div id="result"></div>
+
+</body>
+</html>

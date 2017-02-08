@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Canvasテスト</title>
+<script>
+  function draw(){
+  var canvas = document.getElementById("canvas1");
+  if(canvas.getContext){
+  var cvs = canvas.getContext("2d");
+
+  cvs.lineWidth=4;
+  cvs.lineCap="round";
+  cvs.lineJoin="round";
+
+  var grad1 = cvs.createLinearGradient(0,0,150,0);
+  grad1.addColorStop(0,"#ffffff");
+  grad1.addColorStop(1,"#0000ff");
+
+  var grad2 = cvs.createRadialGradient(220,50,10,250,100,70);
+  grad2.addColorStop(0,"#ffffff");
+  grad2.addColorStop(1,"#00ff00");
+
+  cvs.strokeStyle="#ff1100";
+  cvs.fillStyle=grad1;
+  cvs.fillRect(0,0, 150,150);
+
+
+  cvs.beginPath();
+  cvs.arc(250,75,70,0,Math.PI*2,false);
+  cvs.stroke();
+  cvs.fillStyle=grad2;
+  cvs.fill();
+
+
+  }
+  }
+</script>
+</head>
+<body onload="draw();">
+  <canvas id="canvas1" width="800" height="800">
+    canvasを表示できません
+  </canvas>
+</body>
+</html>

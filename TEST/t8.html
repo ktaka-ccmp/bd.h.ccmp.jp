@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>fileテスト</title>
+<script>
+
+function SaveJsonFile(){
+    href = "data:application/octet-stream,"+encodeURIComponent("Hello World");
+window.open(href);
+}
+
+
+</script>
+</head>
+
+<body>
+
+
+<button onclick="SaveJsonFile()">SaveJason</button>
+
+<div id="result"></div>
+
+</body>
+</html>

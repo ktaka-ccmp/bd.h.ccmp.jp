@@ -153,11 +153,12 @@ function draw_a_mark(ctx, mk){
     
     ctx.restore();
 
-    ctx.font="10pt sans-serif bold";
+    ctx.font="12pt sans-serif bold";
     ctx.textAlign = "center";
     ctx.textBaseline = "top";
-    ctx.fillStyle = "#0000ff";
-    ctx.fillText(mk.text , mouseX, mouseY+8);
+//    ctx.fillStyle = "#0000ff";
+    ctx.fillStyle = "#000000";
+    ctx.fillText(mk.text , mouseX, mouseY+10);
 
     ctx.restore();
 }

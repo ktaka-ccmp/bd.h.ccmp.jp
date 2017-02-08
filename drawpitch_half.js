@@ -32,7 +32,7 @@ function drawpitch(){
     var cw = canvas.width;
     var ch = canvas.height;
 
-    var xoff = 100;
+    var xoff = 70;
     var yoff = xoff*40/50;
 
     var pw = cw-2*xoff;
@@ -51,7 +51,8 @@ function drawpitch(){
 
     //Pitch for 8
     cvs.beginPath();
-    cvs.fillStyle="#42ab42";
+//    cvs.fillStyle="#42ab42";
+    cvs.fillStyle="white";
     cvs.fillRect(x0-xoff, y0+yoff, pw+2*xoff, -(0.5*ph+2*yoff) );
 
     //OuterRect

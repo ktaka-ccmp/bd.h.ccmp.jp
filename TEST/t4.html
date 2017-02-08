@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Canvasテスト</title>
+<script>
+
+  function draw(){
+ 
+  var now = new Date();
+  var sec = now.getSeconds();
+  var msec = now.getMilliseconds();
+
+  var canvas = document.getElementById("canvas1");
+  if(canvas.getContext){
+  var cvs = canvas.getContext("2d");
+
+  canvas.onclick = function(event){
+  cvs.clearRect(0,0,canvas.width,canvas.height);
+  cvs.beginPath();
+  cvs.arc(50,50,25,Math.PI*2,false);
+  cvs.stroke();
+  }
+
+  canvas.ondblclick = function(event){
+  cvs.clearRect(0,0,canvas.width,canvas.height);
+  cvs.beginPath();
+  cvs.moveTo(25,25); cvs.lineTo(75,75);
+  cvs.moveTo(25,75); cvs.lineTo(75,25);
+  cvs.stroke();
+  }
+
+  }
+}
+
+</script>
+</head>
+
+<body onload="draw();">
+クリックすると◯<br>
+ダブルクリックで× を表示します。<br>
+  <canvas id="canvas1" width="800" height="800">
+    canvasを表示できません
+  </canvas>
+</body>
+</html>
